@@ -10,7 +10,7 @@
 
 import Foundation
 
-public enum FileSystemError: Swift.Error {
+enum FileSystemError: Swift.Error {
     /// Access to the path is denied.
     ///
     /// This is used when an operation cannot be completed because a component of
@@ -83,9 +83,9 @@ extension FileSystemError {
 }
 
 /// Defines the file modes.
-public enum FileMode {
+enum FileMode {
 
-    public enum Option: Int {
+    enum Option: Int {
         case recursive
         case onlyFiles
     }
@@ -93,7 +93,7 @@ public enum FileMode {
     case userUnWritable
     case userWritable
 
-    public var cliArgument: String {
+    var cliArgument: String {
         switch self {
         case .userUnWritable:
             return "u-w"
@@ -112,7 +112,7 @@ public enum FileMode {
 /// NOTE: All of these APIs are synchronous and can block.
 //
 // FIXME: Design an asynchronous story?
-public protocol FileSystem: class {
+protocol FileSystem: class {
     /// Check whether the given path exists and is accessible.
     func exists(_ path: AbsolutePath, followSymlink: Bool) -> Bool
 
@@ -135,7 +135,7 @@ public protocol FileSystem: class {
 
 /// Convenience implementations (default arguments aren't permitted in protocol
 /// methods).
-public extension FileSystem {
+extension FileSystem {
     /// exists override with default value.
     func exists(_ path: AbsolutePath) -> Bool {
         return exists(path, followSymlink: true)
@@ -166,5 +166,5 @@ private class LocalFileSystem: FileSystem {
     }
 }
 
-/// Public access to the local FS proxy.
-public var localFileSystem: FileSystem = LocalFileSystem()
+/// access to the local FS proxy.
+var localFileSystem: FileSystem = LocalFileSystem()

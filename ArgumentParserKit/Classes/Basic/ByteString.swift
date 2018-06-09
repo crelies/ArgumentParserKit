@@ -21,47 +21,47 @@
 /// strings or and by eliminating wasted space in growable arrays). For
 /// construction of byte arrays, clients should use the `OutputByteStream` class
 /// and then convert to a `ByteString` when complete.
-public struct ByteString: ExpressibleByArrayLiteral, Hashable {
+struct ByteString: ExpressibleByArrayLiteral, Hashable {
     /// The buffer contents.
     fileprivate var _bytes: [UInt8]
 
     /// Create an empty byte string.
-    public init() {
+    init() {
         _bytes = []
     }
 
     /// Create a byte string from a byte array literal.
-    public init(arrayLiteral contents: UInt8...) {
+    init(arrayLiteral contents: UInt8...) {
         _bytes = contents
     }
 
     /// Create a byte string from an array of bytes.
-    public init(_ contents: [UInt8]) {
+    init(_ contents: [UInt8]) {
         _bytes = contents
     }
 
     /// Create a byte string from an byte buffer.
-    public init<S: Sequence> (_ contents: S) where S.Iterator.Element == UInt8 {
+    init<S: Sequence> (_ contents: S) where S.Iterator.Element == UInt8 {
         _bytes = [UInt8](contents)
     }
 
     /// Create a byte string from the UTF8 encoding of a string.
-    public init(encodingAsUTF8 string: String) {
+    init(encodingAsUTF8 string: String) {
         _bytes = [UInt8](string.utf8)
     }
 
     /// Access the byte string contents as an array.
-    public var contents: [UInt8] {
+    var contents: [UInt8] {
         return _bytes
     }
 
     /// Return the byte string size.
-    public var count: Int {
+    var count: Int {
         return _bytes.count
     }
 
     /// Return the string decoded as a UTF8 sequence, if possible.
-    public var asString: String? {
+    var asString: String? {
         // FIXME: This is very inefficient, we need a way to pass a buffer. It
         // is also wrong if the string contains embedded '\0' characters.
         let tmp = _bytes + [UInt8(0)]
@@ -72,7 +72,7 @@ public struct ByteString: ExpressibleByArrayLiteral, Hashable {
 
     /// Return the string decoded as a UTF8 sequence, substituting replacement
     /// characters for ill-formed UTF8 sequences.
-    public var asReadableString: String {
+    var asReadableString: String {
         // FIXME: This is very inefficient, we need a way to pass a buffer. It
         // is also wrong if the string contains embedded '\0' characters.
         let tmp = _bytes + [UInt8(0)]
@@ -84,7 +84,7 @@ public struct ByteString: ExpressibleByArrayLiteral, Hashable {
 
 /// Conform to CustomStringConvertible.
 extension ByteString: CustomStringConvertible {
-    public var description: String {
+    var description: String {
         // For now, default to the "readable string" representation.
         return "<ByteString:\"\(asReadableString)\">"
     }
@@ -92,7 +92,7 @@ extension ByteString: CustomStringConvertible {
 
 #if !swift(>=4.2)
 extension ByteString {
-    public var hashValue: Int {
+    var hashValue: Int {
         var result = contents.count
         for byte in contents {
             result = result &* 31 &+ Int(byte)
@@ -104,7 +104,7 @@ extension ByteString {
 
 #if !swift(>=4.1)
 extension ByteString {
-    public static func == (lhs: ByteString, rhs: ByteString) -> Bool {
+    static func == (lhs: ByteString, rhs: ByteString) -> Bool {
         return lhs.contents == rhs.contents
     }
 }
@@ -112,23 +112,23 @@ extension ByteString {
 
 /// ByteStreamable conformance for a ByteString.
 extension ByteString: ByteStreamable {
-    public func write(to stream: OutputByteStream) {
+    func write(to stream: OutputByteStream) {
         stream.write(_bytes)
     }
 }
 
 /// StringLiteralConvertable conformance for a ByteString.
 extension ByteString: ExpressibleByStringLiteral {
-    public typealias UnicodeScalarLiteralType = StringLiteralType
-    public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+    typealias UnicodeScalarLiteralType = StringLiteralType
+    typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
 
-    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
+    init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
         _bytes = [UInt8](value.utf8)
     }
-    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
+    init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
         _bytes = [UInt8](value.utf8)
     }
-    public init(stringLiteral value: StringLiteralType) {
+    init(stringLiteral value: StringLiteralType) {
         _bytes = [UInt8](value.utf8)
     }
 }

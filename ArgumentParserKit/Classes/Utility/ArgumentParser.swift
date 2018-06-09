@@ -93,11 +93,11 @@ extension ArgumentConversionError: Equatable {
 }
 
 /// Different shells for which we can generate shell scripts.
-public enum Shell: String, StringEnumArgument {
+enum Shell: String, StringEnumArgument {
     case bash
     case zsh
 
-    public static var completion: ShellCompletion = .values([
+    static var completion: ShellCompletion = .values([
         (bash.rawValue, "generate completion script for Bourne-again shell"),
         (zsh.rawValue, "generate completion script for Z shell"),
     ])
@@ -173,12 +173,12 @@ extension Bool: ArgumentKind {
 ///
 /// Conforming to this protocol will automatically make an enum with is
 /// String initializable conform to ArgumentKind.
-public protocol StringEnumArgument: ArgumentKind {
+protocol StringEnumArgument: ArgumentKind {
     init?(rawValue: String)
 }
 
 extension StringEnumArgument {
-    public init(argument: String) throws {
+    init(argument: String) throws {
         guard let value = Self.init(rawValue: argument) else {
             throw ArgumentConversionError.unknown(value: argument)
         }
@@ -190,10 +190,10 @@ extension StringEnumArgument {
 /// An argument representing a path (file / directory).
 ///
 /// The path is resolved in the current working directory.
-public struct PathArgument: ArgumentKind {
-    public let path: AbsolutePath
+struct PathArgument: ArgumentKind {
+    let path: AbsolutePath
 
-    public init(argument: String) throws {
+    init(argument: String) throws {
         // FIXME: This should check for invalid paths.
         if let cwd = localFileSystem.currentWorkingDirectory {
             path = AbsolutePath(argument, relativeTo: cwd)
@@ -202,7 +202,7 @@ public struct PathArgument: ArgumentKind {
         }
     }
 
-    public static var completion: ShellCompletion = .filename
+    static var completion: ShellCompletion = .filename
 }
 
 /// An enum representing the strategy to parse argument values.
@@ -939,7 +939,7 @@ public final class ArgumentParser {
 }
 
 /// A class to bind ArgumentParser's arguments to an option structure.
-public final class ArgumentBinder<Options> {
+final class ArgumentBinder<Options> {
     /// The signature of body closure.
     private typealias BodyClosure = (inout Options, ArgumentParser.Result) throws -> Void
 
@@ -947,11 +947,11 @@ public final class ArgumentBinder<Options> {
     private var bodies = [BodyClosure]()
 
     /// Create a binder.
-    public init() {
+    init() {
     }
 
     /// Bind an option argument.
-    public func bind<T>(
+    func bind<T>(
         option: OptionArgument<T>,
         to body: @escaping (inout Options, T) throws -> Void
     ) {
@@ -962,7 +962,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind an array option argument.
-    public func bindArray<T>(
+    func bindArray<T>(
         option: OptionArgument<[T]>,
         to body: @escaping (inout Options, [T]) throws -> Void
     ) {
@@ -973,7 +973,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind a positional argument.
-    public func bind<T>(
+    func bind<T>(
         positional: PositionalArgument<T>,
         to body: @escaping (inout Options, T) throws -> Void
     ) {
@@ -985,7 +985,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind an array positional argument.
-    public func bindArray<T>(
+    func bindArray<T>(
         positional: PositionalArgument<[T]>,
         to body: @escaping (inout Options, [T]) throws -> Void
     ) {
@@ -997,7 +997,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind two positional arguments.
-    public func bindPositional<T, U>(
+    func bindPositional<T, U>(
         _ first: PositionalArgument<T>,
         _ second: PositionalArgument<U>,
         to body: @escaping (inout Options, T, U) throws -> Void
@@ -1011,7 +1011,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind three positional arguments.
-    public func bindPositional<T, U, V>(
+    func bindPositional<T, U, V>(
         _ first: PositionalArgument<T>,
         _ second: PositionalArgument<U>,
         _ third: PositionalArgument<V>,
@@ -1027,7 +1027,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind two options.
-    public func bind<T, U>(
+    func bind<T, U>(
         _ first: OptionArgument<T>,
         _ second: OptionArgument<U>,
         to body: @escaping (inout Options, T?, U?) throws -> Void
@@ -1038,7 +1038,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind three options.
-    public func bind<T, U, V>(
+    func bind<T, U, V>(
         _ first: OptionArgument<T>,
         _ second: OptionArgument<U>,
         _ third: OptionArgument<V>,
@@ -1050,7 +1050,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind two array options.
-    public func bindArray<T, U>(
+    func bindArray<T, U>(
         _ first: OptionArgument<[T]>,
         _ second: OptionArgument<[U]>,
         to body: @escaping (inout Options, [T], [U]) throws -> Void
@@ -1061,7 +1061,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Add three array option and call the final closure with their values.
-    public func bindArray<T, U, V>(
+    func bindArray<T, U, V>(
         _ first: OptionArgument<[T]>,
         _ second: OptionArgument<[U]>,
         _ third: OptionArgument<[V]>,
@@ -1073,7 +1073,7 @@ public final class ArgumentBinder<Options> {
     }
 
     /// Bind a subparser.
-    public func bind(
+    func bind(
         parser: ArgumentParser,
         to body: @escaping (inout Options, String) throws -> Void
     ) {
@@ -1090,13 +1090,13 @@ public final class ArgumentBinder<Options> {
 
     /// Fill the result into the options structure,
     /// throwing if one of the user-provided binder function throws.
-    public func fill(parseResult result: ArgumentParser.Result, into options: inout Options) throws {
+    func fill(parseResult result: ArgumentParser.Result, into options: inout Options) throws {
         try bodies.forEach { try $0(&options, result) }
     }
 
     /// Fill the result into the options structure.
     @available(*, deprecated, renamed: "fill(parseResult:into:)")
-    public func fill(_ result: ArgumentParser.Result, into options: inout Options) {
+    func fill(_ result: ArgumentParser.Result, into options: inout Options) {
         try! fill(parseResult: result, into: &options)
     }
 

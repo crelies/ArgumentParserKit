@@ -8,14 +8,14 @@
  See http://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
 
-public struct URL {
+struct URL {
 
     /// Parses the URL type of a git repository
     /// e.g. https://github.com/apple/swift returns "https"
     /// e.g. git@github.com:apple/swift returns "git"
     ///
     /// This is *not* a generic URI scheme parser!
-    public static func scheme(_ url: String) -> String? {
+    static func scheme(_ url: String) -> String? {
 
         func prefixOfSplitBy(_ delimiter: String) -> String? {
             let (head, tail) = url.split(around: delimiter)

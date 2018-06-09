@@ -13,7 +13,7 @@ import Foundation
 /// This class bridges the gap between OSX and Linux Foundation Threading API.
 /// It provides closure based execution and a join method to block the calling thread
 /// until the thread is finished executing.
-final public class Thread {
+final class Thread {
 
     /// The thread implementation which is Foundation.Thread on Linux and
     /// a Thread subclass which provides closure support on OSX.
@@ -26,7 +26,7 @@ final public class Thread {
     private var isFinished: Bool
 
     /// Creates an instance of thread class with closure to be executed when start() is called.
-    public init(task: @escaping () -> Void) {
+    init(task: @escaping () -> Void) {
         isFinished = false
         finishedCondition = Condition()
 
@@ -52,12 +52,12 @@ final public class Thread {
     }
 
     /// Starts the thread execution.
-    public func start() {
+    func start() {
         thread.start()
     }
 
     /// Blocks the calling thread until this thread is finished execution.
-    public func join() {
+    func join() {
         finishedCondition.whileLocked {
             while !isFinished {
                 finishedCondition.wait()

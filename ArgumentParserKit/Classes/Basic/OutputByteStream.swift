@@ -14,7 +14,7 @@ private func hexdigit(_ value: UInt8) -> UInt8 {
 }
 
 /// Describes a type which can be written to a byte stream.
-public protocol ByteStreamable {
+protocol ByteStreamable {
     func write(to stream: OutputByteStream)
 }
 
@@ -59,7 +59,7 @@ public class OutputByteStream: TextOutputStream {
     // MARK: Data Access API
 
     /// The current offset within the output stream.
-    public final var position: Int {
+    final var position: Int {
         return queue.sync {
             return buffer.count
         }
@@ -77,7 +77,7 @@ public class OutputByteStream: TextOutputStream {
 
     // MARK: Data Output API
 
-    public final func flush() {
+    final func flush() {
         queue.sync {
             writeImpl(buffer)
             clearBuffer()
@@ -94,7 +94,7 @@ public class OutputByteStream: TextOutputStream {
     }
 
     /// Write an individual byte to the buffer.
-    public final func write(_ byte: UInt8) {
+    final func write(_ byte: UInt8) {
         queue.sync {
             writeUnsafe(byte)
         }
@@ -113,7 +113,7 @@ public class OutputByteStream: TextOutputStream {
 
   #if swift(>=4.1)
     /// Write a collection of bytes to the buffer.
-    public final func write<C: Collection>(collection bytes: C)
+    final func write<C: Collection>(collection bytes: C)
         where C.Element == UInt8 {
         queue.sync {
             // This is based on LLVM's raw_ostream.
@@ -156,7 +156,7 @@ public class OutputByteStream: TextOutputStream {
     }
   #else
     /// Write a collection of bytes to the buffer.
-    public final func write<C: Collection>(collection bytes: C) where
+    final func write<C: Collection>(collection bytes: C) where
         C.Iterator.Element == UInt8,
         C.SubSequence: Collection {
         queue.sync {
@@ -206,17 +206,17 @@ public class OutputByteStream: TextOutputStream {
     }
 
     /// Write a sequence of bytes to the buffer.
-    public final func write(_ bytes: ArraySlice<UInt8>) {
+    final func write(_ bytes: ArraySlice<UInt8>) {
         write(collection: bytes)
     }
 
     /// Write a sequence of bytes to the buffer.
-    public final func write(_ bytes: [UInt8]) {
+    final func write(_ bytes: [UInt8]) {
         write(collection: bytes)
     }
 
     /// Write a sequence of bytes to the buffer.
-    public final func write<S: Sequence>(sequence: S) where S.Iterator.Element == UInt8 {
+    final func write<S: Sequence>(sequence: S) where S.Iterator.Element == UInt8 {
         queue.sync {
             // Iterate the sequence and append byte by byte since sequence's append
             // is not performant anyway.
@@ -233,17 +233,17 @@ public class OutputByteStream: TextOutputStream {
     }
 
     /// Write a character to the buffer (as UTF8).
-    public final func write(_ character: Character) {
+    final func write(_ character: Character) {
         write(String(character))
     }
 
     /// Write an arbitrary byte streamable to the buffer.
-    public final func write(_ value: ByteStreamable) {
+    final func write(_ value: ByteStreamable) {
         value.write(to: self)
     }
 
     /// Write an arbitrary streamable to the buffer.
-    public final func write(_ value: TextOutputStreamable) {
+    final func write(_ value: TextOutputStreamable) {
         // Get a mutable reference.
         var stream: OutputByteStream = self
         value.write(to: &stream)
@@ -255,7 +255,7 @@ public class OutputByteStream: TextOutputStream {
     /// NOTE: This writes the literal data applying JSON string escaping, but
     /// does not write any other characters (like the quotes that would surround
     /// a JSON string).
-    public final func writeJSONEscaped(_ string: String) {
+    final func writeJSONEscaped(_ string: String) {
         queue.sync {
             // See RFC7159 for reference: https://tools.ietf.org/html/rfc7159
             for character in string.utf8 {
@@ -318,33 +318,33 @@ precedencegroup StreamingPrecedence {
 // the defined protocol.
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: UInt8) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: UInt8) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: [UInt8]) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: [UInt8]) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: ArraySlice<UInt8>) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: ArraySlice<UInt8>) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 #if swift(>=4.1)
 @discardableResult
-public func <<< <C: Collection>(stream: OutputByteStream, value: C)
+func <<< <C: Collection>(stream: OutputByteStream, value: C)
     -> OutputByteStream where C.Element == UInt8 {
     stream.write(collection: value)
     return stream
 }
 #else
 @discardableResult
-public func <<< <C: Collection>(stream: OutputByteStream, value: C) -> OutputByteStream where
+func <<< <C: Collection>(stream: OutputByteStream, value: C) -> OutputByteStream where
      C.Iterator.Element == UInt8,
      C.SubSequence: Collection {
     stream.write(collection: value)
@@ -353,7 +353,7 @@ public func <<< <C: Collection>(stream: OutputByteStream, value: C) -> OutputByt
 #endif
 
 @discardableResult
-public func <<< <S: Sequence>(
+func <<< <S: Sequence>(
     stream: OutputByteStream,
     value: S
 ) -> OutputByteStream where S.Iterator.Element == UInt8 {
@@ -362,43 +362,43 @@ public func <<< <S: Sequence>(
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: String) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: String) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: Character) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: Character) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: ByteStreamable) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: ByteStreamable) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 @discardableResult
-public func <<< (stream: OutputByteStream, value: TextOutputStreamable) -> OutputByteStream {
+func <<< (stream: OutputByteStream, value: TextOutputStreamable) -> OutputByteStream {
     stream.write(value)
     return stream
 }
 
 extension UInt8: ByteStreamable {
-    public func write(to stream: OutputByteStream) {
+    func write(to stream: OutputByteStream) {
         stream.write(self)
     }
 }
 
 extension Character: ByteStreamable {
-    public func write(to stream: OutputByteStream) {
+    func write(to stream: OutputByteStream) {
         stream.write(self)
     }
 }
 
 extension String: ByteStreamable {
-    public func write(to stream: OutputByteStream) {
+    func write(to stream: OutputByteStream) {
         stream.write(self)
     }
 }
@@ -406,9 +406,9 @@ extension String: ByteStreamable {
 // MARK: Formatted Streaming Output
 
 /// Provides operations for returning derived streamable objects to implement various forms of formatted output.
-public struct Format {
+struct Format {
     /// Write the input boolean encoded as a JSON object.
-    static public func asJSON(_ value: Bool) -> ByteStreamable {
+    static func asJSON(_ value: Bool) -> ByteStreamable {
         return JSONEscapedBoolStreamable(value: value)
     }
     private struct JSONEscapedBoolStreamable: ByteStreamable {
@@ -420,7 +420,7 @@ public struct Format {
     }
 
     /// Write the input integer encoded as a JSON object.
-    static public func asJSON(_ value: Int) -> ByteStreamable {
+    static func asJSON(_ value: Int) -> ByteStreamable {
         return JSONEscapedIntStreamable(value: value)
     }
     private struct JSONEscapedIntStreamable: ByteStreamable {
@@ -433,7 +433,7 @@ public struct Format {
     }
 
     /// Write the input double encoded as a JSON object.
-    static public func asJSON(_ value: Double) -> ByteStreamable {
+    static func asJSON(_ value: Double) -> ByteStreamable {
         return JSONEscapedDoubleStreamable(value: value)
     }
     private struct JSONEscapedDoubleStreamable: ByteStreamable {
@@ -448,7 +448,7 @@ public struct Format {
     }
 
     /// Write the input string encoded as a JSON object.
-    static public func asJSON(_ string: String) -> ByteStreamable {
+    static func asJSON(_ string: String) -> ByteStreamable {
         return JSONEscapedStringStreamable(value: string)
     }
     private struct JSONEscapedStringStreamable: ByteStreamable {
@@ -464,7 +464,7 @@ public struct Format {
     /// Write the input string list encoded as a JSON object.
     //
     // FIXME: We might be able to make this more generic through the use of a "JSONEncodable" protocol.
-    static public func asJSON(_ items: [String]) -> ByteStreamable {
+    static func asJSON(_ items: [String]) -> ByteStreamable {
         return JSONEscapedStringListStreamable(items: items)
     }
     private struct JSONEscapedStringListStreamable: ByteStreamable {
@@ -481,7 +481,7 @@ public struct Format {
     }
 
     /// Write the input dictionary encoded as a JSON object.
-    static public func asJSON(_ items: [String: String]) -> ByteStreamable {
+    static func asJSON(_ items: [String: String]) -> ByteStreamable {
         return JSONEscapedDictionaryStreamable(items: items)
     }
     private struct JSONEscapedDictionaryStreamable: ByteStreamable {
@@ -500,7 +500,7 @@ public struct Format {
     /// Write the input list (after applying a transform to each item) encoded as a JSON object.
     //
     // FIXME: We might be able to make this more generic through the use of a "JSONEncodable" protocol.
-    static public func asJSON<T>(_ items: [T], transform: @escaping (T) -> String) -> ByteStreamable {
+    static func asJSON<T>(_ items: [T], transform: @escaping (T) -> String) -> ByteStreamable {
         return JSONEscapedTransformedStringListStreamable(items: items, transform: transform)
     }
     private struct JSONEscapedTransformedStringListStreamable<T>: ByteStreamable {
@@ -518,7 +518,7 @@ public struct Format {
     }
 
     /// Write the input list to the stream with the given separator between items.
-    static public func asSeparatedList<T: ByteStreamable>(_ items: [T], separator: String) -> ByteStreamable {
+    static func asSeparatedList<T: ByteStreamable>(_ items: [T], separator: String) -> ByteStreamable {
         return SeparatedListStreamable(items: items, separator: separator)
     }
     private struct SeparatedListStreamable<T: ByteStreamable>: ByteStreamable {
@@ -539,7 +539,7 @@ public struct Format {
 
     /// Write the input list to the stream (after applying a transform to each item) with the given separator between
     /// items.
-    static public func asSeparatedList<T>(
+    static func asSeparatedList<T>(
         _ items: [T],
         transform: @escaping (T) -> ByteStreamable,
         separator: String
@@ -559,7 +559,7 @@ public struct Format {
         }
     }
 
-    static public func asRepeating(string: String, count: Int) -> ByteStreamable {
+    static func asRepeating(string: String, count: Int) -> ByteStreamable {
         return RepeatingStringStreamable(string: string, count: count)
     }
     private struct RepeatingStringStreamable: ByteStreamable {
@@ -581,21 +581,21 @@ public struct Format {
 }
 
 /// Inmemory implementation of OutputByteStream.
-public final class BufferedOutputByteStream: OutputByteStream {
+final class BufferedOutputByteStream: OutputByteStream {
 
     /// Contents of the stream.
     // FIXME: For inmemory implementation we should be share this buffer with OutputByteStream.
     // One way to do this is by allowing OuputByteStream to install external buffers.
     private var contents = [UInt8]()
 
-    override public init() {
+    override init() {
         super.init()
     }
 
     /// The contents of the output stream.
     ///
     /// Note: This implicitly flushes the stream.
-    public var bytes: ByteString {
+    var bytes: ByteString {
         flush()
         return ByteString(contents)
     }
@@ -610,10 +610,10 @@ public final class BufferedOutputByteStream: OutputByteStream {
 }
 
 /// Represents a stream which is backed to a file. Not for instantiating.
-public class FileOutputByteStream: OutputByteStream {
+class FileOutputByteStream: OutputByteStream {
 
     /// Closes the file flushing any buffered data.
-    public final func close() throws {
+    final func close() throws {
         flush()
         try closeImpl()
     }
@@ -624,7 +624,7 @@ public class FileOutputByteStream: OutputByteStream {
 }
 
 /// Implements file output stream for local file system.
-public final class LocalFileOutputByteStream: FileOutputByteStream {
+final class LocalFileOutputByteStream: FileOutputByteStream {
 
     /// The pointer to the file.
     let filePointer: UnsafeMutablePointer<FILE>
@@ -651,7 +651,7 @@ public final class LocalFileOutputByteStream: FileOutputByteStream {
     ///                      to the file. Default value is true.
     ///
     /// - Throws: FileSystemError
-    public init(_ path: AbsolutePath, closeOnDeinit: Bool = true) throws {
+    init(_ path: AbsolutePath, closeOnDeinit: Bool = true) throws {
         guard let filePointer = fopen(path.asString, "wb") else {
             throw FileSystemError(errno: errno)
         }
@@ -702,12 +702,12 @@ public final class LocalFileOutputByteStream: FileOutputByteStream {
     }
 }
 
-/// Public stdout stream instance.
-public var stdoutStream: FileOutputByteStream = try! LocalFileOutputByteStream(
+/// stdout stream instance.
+var stdoutStream: FileOutputByteStream = try! LocalFileOutputByteStream(
     filePointer: stdout,
     closeOnDeinit: false)
 
-/// Public stderr stream instance.
-public var stderrStream: FileOutputByteStream = try! LocalFileOutputByteStream(
+/// stderr stream instance.
+var stderrStream: FileOutputByteStream = try! LocalFileOutputByteStream(
     filePointer: stderr,
     closeOnDeinit: false)

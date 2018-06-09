@@ -10,7 +10,7 @@
 
 extension Collection {
     /// Returns the only element of the collection or nil.
-    public var only: Element? {
+    var only: Element? {
         return count == 1 ? self[startIndex] : nil
     }
 }
