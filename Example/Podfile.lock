@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ArgumentParserKit: e2de0c8ccd79ab0cc4e7e22ab4284b8f1b9e3e9e
+  ArgumentParserKit: 41c0b0be5f8e1202d8c30a287e35986895d10da9
 
 PODFILE CHECKSUM: d0c83bc6a1867c76044e996488af6c879f7b1699
 

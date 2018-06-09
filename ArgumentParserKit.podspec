@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ArgumentParserKit'
   s.version          = '0.1.0'
-  s.summary          = 'Type-safe and easy way for parsing command line arguments.'
+  s.summary          = 'Type-safe and easy way for parsing command line arguments in your macOS command line tools.'
 
   s.description      = <<-DESC
 					I think the ArgumentParser Apple's hides inside the Swift Package Manager deserves more. That's why I extracted the relevant source code into a Pod to make it available by a larger audience.
@@ -21,6 +21,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Apple Inc. and the Swift project authors' => '' }
   s.source           = { :git => 'https://github.com/crelies/ArgumentParserKit.git', :tag => s.version.to_s }
 
+  s.cocoapods_version = '>= 1.4'
+  s.swift_version = '4.0'
   s.platform = :osx
   s.osx.deployment_target = "10.10"
 
