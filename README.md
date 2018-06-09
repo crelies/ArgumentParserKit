@@ -10,7 +10,14 @@ Type-safe and easy way for parsing command line arguments in your macOS command 
 The `ArgumentParser` has out of the box support for the `--help` or `-h` argument. He prints out a beautiful overview of your command line tool usage.
 
 ```
+👻  Welcome to this awesome Command Line Tool  😊
+OVERVIEW: Does amazing things for you
 
+USAGE: CommandLineTool <options>
+
+OPTIONS:
+  --name, -n   		A name
+  --help, -h        Display available options
 ```
 
 ## Example
