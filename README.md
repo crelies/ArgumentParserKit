@@ -16,7 +16,7 @@ OVERVIEW: Does amazing things for you
 USAGE: CommandLineTool <options>
 
 OPTIONS:
-  --name, -n   		A name
+  --name, -n        A name
   --help, -h        Display available options
 ```
 
