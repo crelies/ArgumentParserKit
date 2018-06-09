@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ArgumentParserKit_Example' do
+  pod 'ArgumentParserKit', :path => '../'
+
+  target 'ArgumentParserKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
