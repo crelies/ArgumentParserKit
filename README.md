@@ -5,7 +5,13 @@ Type-safe and easy way for parsing command line arguments in your macOS command 
 [![Version](https://img.shields.io/cocoapods/v/ArgumentParserKit.svg?longCache=true&style=flat-square)](http://cocoapods.org/pods/ArgumentParserKit)
 [![Swift4](https://img.shields.io/badge/swift4-compatible-orange.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/macos)
-[![License](https://img.shields.io/badge/license-Apache-License-v2.0-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/Apache_License)
+[![License](https://img.shields.io/badge/license-Apache%20License%20v2.0-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/Apache_License)
+
+The `ArgumentParser` has out of the box support for the `--help` or `-h` argument. He prints out a beautiful overview of your command line tool usage.
+
+```
+
+```
 
 ## Example
 
