@@ -2,18 +2,15 @@
 //  ViewController.swift
 //  ArgumentParserKit
 //
-//  Created by chris.elies13@gmail.com on 06/09/2018.
-//  Copyright (c) 2018 chris.elies13@gmail.com. All rights reserved.
+//  Created by crelies on 09.06.2018.
+//  Copyright (c) 2018 Christian Elies. All rights reserved.
 //
 
 import Cocoa
 
-class ViewController: NSViewController {
-
+final class ViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
   }
 
   override var representedObject: Any? {
@@ -21,7 +18,4 @@ class ViewController: NSViewController {
     // Update the view, if already loaded.
     }
   }
-
-
 }
-

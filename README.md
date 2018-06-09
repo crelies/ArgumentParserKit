@@ -1,5 +1,7 @@
 # ArgumentParserKit
 
+Type-safe and easy way for parsing command line arguments
+
 [![CI Status](https://img.shields.io/travis/chris.elies13@gmail.com/ArgumentParserKit.svg?style=flat)](https://travis-ci.org/chris.elies13@gmail.com/ArgumentParserKit)
 [![Version](https://img.shields.io/cocoapods/v/ArgumentParserKit.svg?style=flat)](https://cocoapods.org/pods/ArgumentParserKit)
 [![License](https://img.shields.io/cocoapods/l/ArgumentParserKit.svg?style=flat)](https://cocoapods.org/pods/ArgumentParserKit)
@@ -22,8 +24,8 @@ pod 'ArgumentParserKit'
 
 ## Author
 
-chris.elies13@gmail.com, christian.elies@immonet.de
+Apple Inc. and the Swift project authors
 
 ## License
 
-ArgumentParserKit is available under the MIT license. See the LICENSE file for more info.
+ArgumentParserKit is available under the Apache License v2.0 with Runtime Library Exception. See the LICENSE file for more info.

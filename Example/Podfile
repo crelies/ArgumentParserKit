@@ -6,6 +6,5 @@ target 'ArgumentParserKit_Example' do
   target 'ArgumentParserKit_Tests' do
     inherit! :search_paths
 
-    
   end
 end

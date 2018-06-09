@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E290F54AACFF0F98F597C97 /* Pods_ArgumentParserKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF20C1D31C51B35D0E35522 /* Pods_ArgumentParserKit_Example.framework */; };
-		CA381B54C62F323EDCBFAB2A /* Pods_ArgumentParserKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5060FC466C778EA79F696385 /* Pods_ArgumentParserKit_Tests.framework */; };
+		36E314B201776E1FC2BC9C65 /* Pods_ArgumentParserKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8A8A668364C15C04D1EC00 /* Pods_ArgumentParserKit_Tests.framework */; };
+		AFFD749463B072B2F1CFB820 /* Pods_ArgumentParserKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B4D3BD0FF0A4D5F1A9B537 /* Pods_ArgumentParserKit_Example.framework */; };
+		CE4E3D0020CBB3A900E46903 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4E3CFF20CBB3A900E46903 /* XCTest.framework */; };
+		CE4E3D0220CBB5B500E46903 /* OutputByteStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0120CBB5B500E46903 /* OutputByteStreamTests.swift */; };
+		CE4E3D0820CBB6DD00E46903 /* ThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0720CBB6DC00E46903 /* ThreadTests.swift */; };
+		CE4E3D0A20CBB70A00E46903 /* ConditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0920CBB70A00E46903 /* ConditionTests.swift */; };
+		CE4E3D0C20CBB72E00E46903 /* ByteStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0B20CBB72E00E46903 /* ByteStringTests.swift */; };
+		CE4E3D0E20CBB76500E46903 /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0D20CBB76500E46903 /* DictionaryExtensionsTests.swift */; };
+		CE4E3D1020CBB78800E46903 /* CollectionExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D0F20CBB78800E46903 /* CollectionExtensionsTests.swift */; };
+		CE4E3D1220CBB7A500E46903 /* CollectionAlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D1120CBB7A500E46903 /* CollectionAlgorithmsTests.swift */; };
+		CE4E3D1420CBB7D900E46903 /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D1320CBB7D900E46903 /* CollectionTests.swift */; };
+		CE4E3D1620CBB84500E46903 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E3D1520CBB84500E46903 /* StringTests.swift */; };
+		CEFD475220CBAD2D00C0F00C /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD475020CBAD2D00C0F00C /* PathTests.swift */; };
+		CEFD475520CBAD3400C0F00C /* ArgumentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD475420CBAD3400C0F00C /* ArgumentParserTests.swift */; };
+		CEFD475720CBAF5800C0F00C /* XCTAssertHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD475620CBAF5800C0F00C /* XCTAssertHelpers.swift */; };
 		ED83F67C20348A760038D96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F67B20348A760038D96B /* AppDelegate.swift */; };
 		ED83F67E20348A760038D96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F67D20348A760038D96B /* ViewController.swift */; };
 		ED83F68020348A760038D96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED83F67F20348A760038D96B /* Assets.xcassets */; };
 		ED83F68320348A760038D96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED83F68120348A760038D96B /* Main.storyboard */; };
-		ED83F68F20348A760038D96B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83F68E20348A760038D96B /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +40,26 @@
 
 /* Begin PBXFileReference section */
 		0128E2371D041147F4DA718B /* Pods-ArgumentParserKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArgumentParserKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArgumentParserKit_Example/Pods-ArgumentParserKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		16B4D3BD0FF0A4D5F1A9B537 /* Pods_ArgumentParserKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArgumentParserKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D98093A8A827D7F54F864C1 /* Pods-ArgumentParserKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArgumentParserKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArgumentParserKit_Tests/Pods-ArgumentParserKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4EF20C1D31C51B35D0E35522 /* Pods_ArgumentParserKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArgumentParserKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5060FC466C778EA79F696385 /* Pods_ArgumentParserKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArgumentParserKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70F450604A62CA4519BF03A8 /* ArgumentParserKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ArgumentParserKit.podspec; path = ../ArgumentParserKit.podspec; sourceTree = "<group>"; };
-		766947BA93486B26DD14BA99 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B227F7BD1407A4B3FCD50C3F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		70F450604A62CA4519BF03A8 /* ArgumentParserKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ArgumentParserKit.podspec; path = ../ArgumentParserKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		766947BA93486B26DD14BA99 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7C8A8A668364C15C04D1EC00 /* Pods_ArgumentParserKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArgumentParserKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B227F7BD1407A4B3FCD50C3F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C2E4FF93A7D07D9304F9F522 /* Pods-ArgumentParserKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArgumentParserKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArgumentParserKit_Tests/Pods-ArgumentParserKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		CE4E3CFF20CBB3A900E46903 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CE4E3D0120CBB5B500E46903 /* OutputByteStreamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputByteStreamTests.swift; sourceTree = "<group>"; };
+		CE4E3D0720CBB6DC00E46903 /* ThreadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTests.swift; sourceTree = "<group>"; };
+		CE4E3D0920CBB70A00E46903 /* ConditionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionTests.swift; sourceTree = "<group>"; };
+		CE4E3D0B20CBB72E00E46903 /* ByteStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByteStringTests.swift; sourceTree = "<group>"; };
+		CE4E3D0D20CBB76500E46903 /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
+		CE4E3D0F20CBB78800E46903 /* CollectionExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensionsTests.swift; sourceTree = "<group>"; };
+		CE4E3D1120CBB7A500E46903 /* CollectionAlgorithmsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionAlgorithmsTests.swift; sourceTree = "<group>"; };
+		CE4E3D1320CBB7D900E46903 /* CollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
+		CE4E3D1520CBB84500E46903 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		CEFD475020CBAD2D00C0F00C /* PathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
+		CEFD475420CBAD3400C0F00C /* ArgumentParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentParserTests.swift; sourceTree = "<group>"; };
+		CEFD475620CBAF5800C0F00C /* XCTAssertHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTAssertHelpers.swift; sourceTree = "<group>"; };
 		E8226C03C85AC5FC00B57169 /* Pods-ArgumentParserKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArgumentParserKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArgumentParserKit_Example/Pods-ArgumentParserKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		ED83F67820348A760038D96B /* ArgumentParserKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArgumentParserKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED83F67B20348A760038D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +69,6 @@
 		ED83F68420348A760038D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED83F68520348A760038D96B /* ArgumentParserKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArgumentParserKit.entitlements; sourceTree = "<group>"; };
 		ED83F68A20348A760038D96B /* ArgumentParserKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArgumentParserKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED83F68E20348A760038D96B /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		ED83F69020348A760038D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E290F54AACFF0F98F597C97 /* Pods_ArgumentParserKit_Example.framework in Frameworks */,
+				AFFD749463B072B2F1CFB820 /* Pods_ArgumentParserKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA381B54C62F323EDCBFAB2A /* Pods_ArgumentParserKit_Tests.framework in Frameworks */,
+				CE4E3D0020CBB3A900E46903 /* XCTest.framework in Frameworks */,
+				36E314B201776E1FC2BC9C65 /* Pods_ArgumentParserKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +102,31 @@
 				C2E4FF93A7D07D9304F9F522 /* Pods-ArgumentParserKit_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEFD474E20CBACF600C0F00C /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E3D0B20CBB72E00E46903 /* ByteStringTests.swift */,
+				CE4E3D1120CBB7A500E46903 /* CollectionAlgorithmsTests.swift */,
+				CE4E3D0F20CBB78800E46903 /* CollectionExtensionsTests.swift */,
+				CE4E3D0920CBB70A00E46903 /* ConditionTests.swift */,
+				CE4E3D0D20CBB76500E46903 /* DictionaryExtensionsTests.swift */,
+				CE4E3D0120CBB5B500E46903 /* OutputByteStreamTests.swift */,
+				CEFD475020CBAD2D00C0F00C /* PathTests.swift */,
+				CE4E3D0720CBB6DC00E46903 /* ThreadTests.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		CEFD474F20CBACFB00C0F00C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD475420CBAD3400C0F00C /* ArgumentParserTests.swift */,
+				CE4E3D1320CBB7D900E46903 /* CollectionTests.swift */,
+				CE4E3D1520CBB84500E46903 /* StringTests.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		ED83F66F20348A760038D96B = {
@@ -116,7 +166,9 @@
 		ED83F68D20348A760038D96B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				ED83F68E20348A760038D96B /* Tests.swift */,
+				CEFD475620CBAF5800C0F00C /* XCTAssertHelpers.swift */,
+				CEFD474E20CBACF600C0F00C /* Basic */,
+				CEFD474F20CBACFB00C0F00C /* Utility */,
 				ED83F69020348A760038D96B /* Info.plist */,
 			);
 			path = Tests;
@@ -135,8 +187,9 @@
 		F14A2FC15D5C0842EA418D59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EF20C1D31C51B35D0E35522 /* Pods_ArgumentParserKit_Example.framework */,
-				5060FC466C778EA79F696385 /* Pods_ArgumentParserKit_Tests.framework */,
+				CE4E3CFF20CBB3A900E46903 /* XCTest.framework */,
+				16B4D3BD0FF0A4D5F1A9B537 /* Pods_ArgumentParserKit_Example.framework */,
+				7C8A8A668364C15C04D1EC00 /* Pods_ArgumentParserKit_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,7 +205,7 @@
 				ED83F67420348A760038D96B /* Sources */,
 				ED83F67520348A760038D96B /* Frameworks */,
 				ED83F67620348A760038D96B /* Resources */,
-				53C810A6127CAAB75B5F777D /* [CP] Embed Pods Frameworks */,
+				40F36C3389794E0D61886DFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,8 +242,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = CocoaPods;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Christian Elies";
 				TargetAttributes = {
 					ED83F67720348A760038D96B = {
 						CreatedOnToolsVersion = 9.0;
@@ -198,6 +251,7 @@
 					};
 					ED83F68920348A760038D96B = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ED83F67720348A760038D96B;
 					};
@@ -242,7 +296,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53C810A6127CAAB75B5F777D /* [CP] Embed Pods Frameworks */ = {
+		40F36C3389794E0D61886DFB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,7 +366,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED83F68F20348A760038D96B /* Tests.swift in Sources */,
+				CEFD475520CBAD3400C0F00C /* ArgumentParserTests.swift in Sources */,
+				CE4E3D0A20CBB70A00E46903 /* ConditionTests.swift in Sources */,
+				CEFD475720CBAF5800C0F00C /* XCTAssertHelpers.swift in Sources */,
+				CE4E3D1220CBB7A500E46903 /* CollectionAlgorithmsTests.swift in Sources */,
+				CE4E3D0E20CBB76500E46903 /* DictionaryExtensionsTests.swift in Sources */,
+				CE4E3D1420CBB7D900E46903 /* CollectionTests.swift in Sources */,
+				CE4E3D0820CBB6DD00E46903 /* ThreadTests.swift in Sources */,
+				CE4E3D0220CBB5B500E46903 /* OutputByteStreamTests.swift in Sources */,
+				CEFD475220CBAD2D00C0F00C /* PathTests.swift in Sources */,
+				CE4E3D0C20CBB72E00E46903 /* ByteStringTests.swift in Sources */,
+				CE4E3D1620CBB84500E46903 /* StringTests.swift in Sources */,
+				CE4E3D1020CBB78800E46903 /* CollectionExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +417,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -359,6 +425,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -386,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -409,6 +476,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -416,6 +484,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -437,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -481,15 +550,16 @@
 			baseConfigurationReference = 1D98093A8A827D7F54F864C1 /* Pods-ArgumentParserKit_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.ArgumentParserKit-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArgumentParserKit_Example.app/Contents/MacOS/ArgumentParserKit_Example";
 			};
 			name = Debug;
 		};
@@ -498,7 +568,7 @@
 			baseConfigurationReference = C2E4FF93A7D07D9304F9F522 /* Pods-ArgumentParserKit_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -506,7 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.ArgumentParserKit-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArgumentParserKit_Example.app/Contents/MacOS/ArgumentParserKit_Example";
 			};
 			name = Release;
 		};

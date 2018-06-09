@@ -9,35 +9,22 @@
 Pod::Spec.new do |s|
   s.name             = 'ArgumentParserKit'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ArgumentParserKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Type-safe and easy way for parsing command line arguments.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+					I think the ArgumentParser Apple's hides inside the Swift Package Manager deserves more. That's why I extracted the relevant source code into a Pod to make it available by a larger audience.
+					The ArgumentParser offers a type-safe and easy way to parse arguments given via the command line to your program. Apple itself makes clear that you use this private and maybe unstable API at your own risk.
                        DESC
 
-  s.homepage         = 'https://github.com/chris.elies13@gmail.com/ArgumentParserKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'chris.elies13@gmail.com' => 'christian.elies@immonet.de' }
-  s.source           = { :git => 'https://github.com/chris.elies13@gmail.com/ArgumentParserKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.homepage         = 'https://github.com/crelies/ArgumentParserKit'
+  s.license          = { :type => 'Apache License v2.0 with Runtime Library Exception', :file => 'LICENSE' }
+  s.author           = { 'Apple Inc. and the Swift project authors' => '' }
+  s.source           = { :git => 'https://github.com/crelies/ArgumentParserKit.git', :tag => s.version.to_s }
 
   s.platform = :osx
   s.osx.deployment_target = "10.10"
 
   s.source_files = 'ArgumentParserKit/Classes/**/*'
 
-  # s.resource_bundles = {
-  #   'ArgumentParserKit' => ['ArgumentParserKit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'Cocoa'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation'
 end

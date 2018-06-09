@@ -2,17 +2,14 @@
 //  AppDelegate.swift
 //  ArgumentParserKit
 //
-//  Created by chris.elies13@gmail.com on 06/09/2018.
-//  Copyright (c) 2018 chris.elies13@gmail.com. All rights reserved.
+//  Created by crelies on 09.06.2018.
+//  Copyright (c) 2018 Christian Elies. All rights reserved.
 //
 
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
+final class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
   }
@@ -20,7 +17,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
-
-
 }
-

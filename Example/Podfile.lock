@@ -1,0 +1,16 @@
+PODS:
+  - ArgumentParserKit (0.1.0)
+
+DEPENDENCIES:
+  - ArgumentParserKit (from `../`)
+
+EXTERNAL SOURCES:
+  ArgumentParserKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ArgumentParserKit: e2de0c8ccd79ab0cc4e7e22ab4284b8f1b9e3e9e
+
+PODFILE CHECKSUM: d0c83bc6a1867c76044e996488af6c879f7b1699
+
+COCOAPODS: 1.5.3
