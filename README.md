@@ -7,6 +7,9 @@ Type-safe and easy way for parsing command line arguments in your macOS command 
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/macos)
 [![License](https://img.shields.io/badge/license-Apache%20License%20v2.0-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/Apache_License)
 
+I think the ArgumentParser Apple hides inside their Swift Package Manager deserves more. That's why I extracted the relevant source code into a Pod to make it available to a larger audience.
+The ArgumentParser offers a type-safe and easy way to parse arguments given via the command line to your program. Keep in mind that Apple itself makes clear that you use this private and maybe unstable API at your own risk.
+
 The `ArgumentParser` has out of the box support for the `--help` or `-h` argument. He prints out a beautiful overview of your command line tool usage.
 
 ```
