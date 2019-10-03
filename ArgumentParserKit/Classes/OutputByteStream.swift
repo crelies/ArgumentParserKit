@@ -7,6 +7,7 @@
  See http://swift.org/LICENSE.txt for license information
  See http://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
+import Dispatch
 
 /// Convert an integer in 0..<16 to its hexadecimal ASCII character.
 private func hexdigit(_ value: UInt8) -> UInt8 {
