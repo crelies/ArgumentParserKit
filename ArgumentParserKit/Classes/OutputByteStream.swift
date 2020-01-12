@@ -611,7 +611,7 @@ final class BufferedOutputByteStream: OutputByteStream {
 }
 
 /// Represents a stream which is backed to a file. Not for instantiating.
-class FileOutputByteStream: OutputByteStream {
+public class FileOutputByteStream: OutputByteStream {
 
     /// Closes the file flushing any buffered data.
     final func close() throws {
@@ -704,11 +704,11 @@ final class LocalFileOutputByteStream: FileOutputByteStream {
 }
 
 /// stdout stream instance.
-var stdoutStream: FileOutputByteStream = try! LocalFileOutputByteStream(
+public let stdoutStream: FileOutputByteStream = try! LocalFileOutputByteStream(
     filePointer: stdout,
     closeOnDeinit: false)
 
 /// stderr stream instance.
-var stderrStream: FileOutputByteStream = try! LocalFileOutputByteStream(
+public let stderrStream: FileOutputByteStream = try! LocalFileOutputByteStream(
     filePointer: stderr,
     closeOnDeinit: false)
