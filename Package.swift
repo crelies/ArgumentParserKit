@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "ArgumentParserKit",
+    platforms: [
+        .macOS(.v10_10)
+    ],
     products: [
         .library(
             name: "ArgumentParserKit",

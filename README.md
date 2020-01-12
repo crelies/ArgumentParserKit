@@ -3,7 +3,7 @@
 Type-safe and easy way for parsing command line arguments in your macOS command line tools
 
 [![Version](https://img.shields.io/cocoapods/v/ArgumentParserKit.svg?longCache=true&style=flat-square)](http://cocoapods.org/pods/ArgumentParserKit)
-[![Swift4](https://img.shields.io/badge/swift4-compatible-orange.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
+[![Swift5.1](https://img.shields.io/badge/swift5.1-compatible-orange.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/macos)
 [![License](https://img.shields.io/badge/license-Apache%20License%20v2.0-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/Apache_License)
 
@@ -102,15 +102,25 @@ func get<T>(_ argument: OptionArgument<T>) -> T?
 
 ## Requirements
 
-Deployment target has to be greater than or equal to 10.10.
+Deployment target has to be greater than or equal to macOS 10.10.
 
 ## Installation
+
+### Cocoapods
 
 ArgumentParserKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'ArgumentParserKit'
+```
+
+### Swift package manager
+
+Add this **Swift package** as a dependency to your *Package.swift*
+
+```swift
+.package(url: "https://github.com/crelies/ArgumentParserKit.git", from: "1.0.0")
 ```
 
 ## Further resources

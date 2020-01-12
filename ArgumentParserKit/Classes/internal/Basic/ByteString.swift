@@ -92,12 +92,12 @@ extension ByteString: CustomStringConvertible {
 
 #if !swift(>=4.2)
 extension ByteString {
-    var hashValue: Int {
+    func hash(into hasher: inout Hasher) {
         var result = contents.count
         for byte in contents {
             result = result &* 31 &+ Int(byte)
         }
-        return result
+        hasher.combine(result)
     }
 }
 #endif
