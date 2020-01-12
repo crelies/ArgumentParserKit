@@ -5,6 +5,7 @@ Type-safe and easy way for parsing command line arguments in your macOS command 
 [![Version](https://img.shields.io/cocoapods/v/ArgumentParserKit.svg?longCache=true&style=flat-square)](http://cocoapods.org/pods/ArgumentParserKit)
 [![Swift5.1](https://img.shields.io/badge/swift5.1-compatible-orange.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/macos)
+[![Current Version](https://img.shields.io/github/v/tag/crelies/ArgumentParserKit?longCache=true&style=flat-square)](https://github.com/crelies/ArgumentParserKit)
 [![License](https://img.shields.io/badge/license-Apache%20License%20v2.0-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/Apache_License)
 
 I think the ArgumentParser Apple hides inside their Swift Package Manager deserves more. That's why I extracted the relevant source code into a Pod to make it available to a larger audience.
