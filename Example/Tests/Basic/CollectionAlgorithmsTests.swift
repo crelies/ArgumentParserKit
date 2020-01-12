@@ -16,8 +16,8 @@ class CollectionAlgorithmsTests: XCTestCase {
         let str = "hello"
         XCTAssertEqual(str.rindex(of: "h"), str.startIndex)
         XCTAssertEqual(str.rindex(of: "h", from: str.index(after: str.startIndex)), nil)
-        XCTAssertEqual(str.rindex(of: "o"), str.index(of: "o"))
-        XCTAssertEqual(str.rindex(of: "l"), str.index(after: str.index(where: { $0 == "l" })!))
+        XCTAssertEqual(str.rindex(of: "o"), str.firstIndex(of: "o"))
+        XCTAssertEqual(str.rindex(of: "l"), str.index(after: str.firstIndex(where: { $0 == "l" })!))
         XCTAssertEqual(str.rindex(of: "x"), nil)
     }
 
